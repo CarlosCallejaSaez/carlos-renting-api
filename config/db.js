@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // URL de conexión a la base de datos
-const dbUrl = 'mongodb+srv://mongodb:mongodb@rockthecode.vtwcyx2.mongodb.net/CARLOSRENTING?retryWrites=true&w=majority&appName=RockTheCode';
+const dbUrl = process.env.MONGODB;
 
 // Configuración de la conexión a la base de datos
 const connectDB = async () => {
