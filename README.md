@@ -5,6 +5,11 @@ Bienvenido a CarlosRenting. Esta API proporciona endpoints para la gestión de u
 ## Documentación Swagger
 Accede a la documentación de la API en `/api-docs`
 
+## Uso de Morgan para el Registro de Logs
+
+En este proyecto, se usa Morgan como middleware para registrar logs de las solicitudes HTTP en un archivo de registro. Esto garantiza que los logs generados por las solicitudes HTTP sean registrados en el archivo `access.log` en la carpeta `logs` del proyecto.
+
+
 ## Endpoints
 
 ### Coches (Cars)

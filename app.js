@@ -1,11 +1,22 @@
 require('dotenv').config()
 const express = require('express');
+const morgan = require('morgan');
+const fs = require('fs');
+const path = require('path');
 const swaggerUi = require('swagger-ui-express');
 const specs = require('./config/swaggerConfig');
 const app = express();
 const connectDB = require('./config/db');
 
-;
+// Define la ruta del archivo de log
+const logFilePath = path.join(__dirname, 'logs', 'access.log');
+
+// Crea un stream de escritura de archivos para los logs
+const logStream = fs.createWriteStream(logFilePath, { flags: 'a' });
+
+// Configura Morgan para que registre logs en el stream de escritura de archivos
+app.use(morgan('combined', { stream: logStream }));
+
 
 // Conexión a la base de datos
 connectDB();
