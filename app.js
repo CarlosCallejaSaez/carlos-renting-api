@@ -1,5 +1,7 @@
 require('dotenv').config()
 const express = require('express');
+const swaggerUi = require('swagger-ui-express');
+const specs = require('./config/swaggerConfig');
 const app = express();
 const connectDB = require('./config/db');
 
@@ -17,10 +19,13 @@ const reservationRoutes = require('./routes/reservationRoutes');
 const userRoutes = require('./routes/userRoutes');
 const commentRoutes = require('./routes/commentRoutes');
 
+
+
 app.use('/cars', carRoutes);
 app.use('/reservations', reservationRoutes);
 app.use('/users', userRoutes);
 app.use('/comments', commentRoutes);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 app.get("*", (req, res) => {
     res.status(404).send("<h1>Page not found on the server -Carlos Calleja Sáez-</h1>");

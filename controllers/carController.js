@@ -10,6 +10,7 @@ exports.getAllCars = async (req, res) => {
   }
 };
 
+
 // Controlador para obtener un coche por su ID
 exports.getCarById = async (req, res) => {
   try {
@@ -70,6 +71,7 @@ exports.updateCar = async (req, res) => {
   }
 };
 
+// Controlador para borrar un coche existente
 exports.deleteCar = async (req, res) => {
   try {
     const car = await Car.findByIdAndDelete(req.params.id);
@@ -81,6 +83,7 @@ exports.deleteCar = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
 
 // Controlador para obtener todos los coches, con opción de filtrado por marca y/o año
 exports.getAllCars = async (req, res) => {
