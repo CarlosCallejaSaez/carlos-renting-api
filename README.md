@@ -2,6 +2,9 @@
 
 Bienvenido a CarlosRenting. Esta API proporciona endpoints para la gestión de una flota de coches de renting.
 
+## Documentación Swagger
+Accede a la documentación de la API en `/api-docs`
+
 ## Endpoints
 
 ### Coches (Cars)
