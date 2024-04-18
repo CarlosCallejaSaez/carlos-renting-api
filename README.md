@@ -21,6 +21,11 @@ Este proyecto incluye una página de error 404 personalizada para mejorar la exp
 
 Agrega varias medidas de seguridad automáticas. Helmet configura encabezados HTTP relacionados con la seguridad, como la Política de Seguridad de Contenido (CSP), que ayuda a mitigar riesgos de Cross-Site Scripting (XSS) y otros ataques comunes. 
 
+## Límite de Peticiones
+
+Para garantizar la estabilidad y disponibilidad de la API, se ha un establecido un límite de peticiones utilizando el middleware `express-rate-limit` en Node.js. Este límite está configurado para permitir un máximo de 100 peticiones por hora por cliente. Esta medida permite controlar el tráfico entrante y prevenir sobrecargas en el servidor.
+
+
 
 ## Endpoints
 

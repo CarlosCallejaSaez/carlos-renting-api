@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const rateLimit = require('express-rate-limit');
 var cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
@@ -22,6 +23,18 @@ app.use(
     },
   })
 );
+
+// Límite de tasa ( 100 peticiones por hora)
+const limiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hora en milisegundos
+  max: 100, // límite de 100 peticiones por hora
+  message: 'Has excedido el límite de peticiones. Por favor, inténtalo de nuevo más tarde.'
+});
+
+// Aplica el middleware de límite de tasa a todas las rutas
+app.use(limiter);
+
+
 
 // Define la ruta del archivo de log
 const logFilePath = path.join(__dirname, "logs", "access.log");
