@@ -17,6 +17,10 @@ Este proyecto incluye pruebas unitarias escritas utilizando Mocha, un popular ma
 
 Este proyecto incluye una página de error 404 personalizada para mejorar la experiencia del usuario cuando intenta acceder a una ruta que no existe en el servidor.
 
+## Integración de Helmet para seguridad adicional
+
+Agrega varias medidas de seguridad automáticas. Helmet configura encabezados HTTP relacionados con la seguridad, como la Política de Seguridad de Contenido (CSP), que ayuda a mitigar riesgos de Cross-Site Scripting (XSS) y otros ataques comunes. 
+
 
 ## Endpoints
 
