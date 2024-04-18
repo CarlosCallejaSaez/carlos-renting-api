@@ -9,6 +9,11 @@ Accede a la documentación de la API en `/api-docs`
 
 En este proyecto, se usa Morgan como middleware para registrar logs de las solicitudes HTTP en un archivo de registro. Esto garantiza que los logs generados por las solicitudes HTTP sean registrados en el archivo `access.log` en la carpeta `logs` del proyecto.
 
+## Pruebas Unitarias con Mocha
+
+Este proyecto incluye pruebas unitarias escritas utilizando Mocha, un popular marco de pruebas para Node.js. Las pruebas unitarias son una parte fundamental del proceso de desarrollo, ya que nos permiten verificar el funcionamiento correcto de cada componente de nuestra aplicación de forma aislada. Utilizamos Mocha junto con Chai y Chai-HTTP para escribir y ejecutar nuestras pruebas, asegurándonos de que nuestra aplicación funcione como se espera en diferentes escenarios. Para ejecutar las pruebas, simplemente ejecute el comando `npm test` en la terminal y Mocha se encargará de ejecutar todas las pruebas definidas en el directorio de pruebas.
+
+
 
 ## Endpoints
 

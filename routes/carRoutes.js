@@ -281,7 +281,7 @@ router.put('/:id', carController.updateCar);
 // Ruta para eliminar un coche
 router.delete('/:id', carController.deleteCar);
 
-module.exports = router;
+
 
 /**
  * @swagger
@@ -298,3 +298,5 @@ module.exports = router;
 
 // Ruta para obtener solo los coches disponibles
 router.get('/available', carController.getAvailableCars);
+
+module.exports = router;
