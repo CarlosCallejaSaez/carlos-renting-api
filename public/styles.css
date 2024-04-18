@@ -17,7 +17,7 @@ background: linear-gradient(90deg, rgba(226,225,206,0.5550595238095238) 7%, rgba
     color: #4e0505;
   }
   
-  p {
+  .p {
     color: #000000;
     margin-bottom: 20px;
   }

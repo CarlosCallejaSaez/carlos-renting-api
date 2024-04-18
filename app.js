@@ -1,5 +1,7 @@
 require('dotenv').config()
 const express = require('express');
+var cors = require('cors');
+const helmet = require('helmet');
 const morgan = require('morgan');
 const fs = require('fs');
 const path = require('path');
@@ -7,6 +9,25 @@ const swaggerUi = require('swagger-ui-express');
 const specs = require('./config/swaggerConfig');
 const app = express();
 const connectDB = require('./config/db');
+
+app.use(cors())
+
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'"],
+        styleSrc: ["'self'"],
+        fontSrc: ["'self'"],
+        imgSrc: ["'self'"],
+        objectSrc: ["'none'"],
+        frameSrc: ["'none'"],
+        upgradeInsecureRequests: [],
+      },
+    },
+  })
+);
 
 // Define la ruta del archivo de log
 const logFilePath = path.join(__dirname, 'logs', 'access.log');
