@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Jersey+10+Charted&family=Protest+Riot&display=swap');
+body {
+    font-family: "Protest Riot", sans-serif;
+    
+    background: rgb(226,225,206);
+background: linear-gradient(90deg, rgba(226,225,206,0.5550595238095238) 7%, rgba(143,9,39,0.4822303921568627) 100%);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  h1 {
+    color: #4e0505;
+  }
+  
+  p {
+    color: #000000;
+    margin-bottom: 20px;
+  }
+
+  .language-selector{
+    margin:20px
+  }
+
+
+
+  .typewriter {
+    overflow: hidden; /* Oculta el texto que sobresale */
+    border-right: .15em solid rgb(0, 0, 0); /* Crea el efecto del cursor */
+    white-space: nowrap; /* Evita que el texto se ajuste automáticamente */
+    margin: 0 auto; /* Centra el texto */
+    letter-spacing: .15em; /* Espaciado entre letras */
+    animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+  }
+
+  /* Animación para simular la escritura */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  /* Animación para simular el cursor intermitente */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(5, 5, 5); }
+  }

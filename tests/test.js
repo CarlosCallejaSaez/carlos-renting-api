@@ -29,7 +29,7 @@ describe('Pruebas de API', () => {
       it('Debería devolver un mensaje de "Página no encontrada" para rutas no existentes', async () => {
         const res = await chai.request(app).get('/ruta-que-no-existe');
         expect(res).to.have.status(404);
-        expect(res.text).to.include('Page not found on the server -Carlos Calleja Sáez-');
+        expect(res.text).to.include('Página no encontrada');
         
       });
     });

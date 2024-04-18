@@ -13,6 +13,9 @@ En este proyecto, se usa Morgan como middleware para registrar logs de las solic
 
 Este proyecto incluye pruebas unitarias escritas utilizando Mocha, un popular marco de pruebas para Node.js. Las pruebas unitarias son una parte fundamental del proceso de desarrollo, ya que nos permiten verificar el funcionamiento correcto de cada componente de nuestra aplicación de forma aislada. Utilizamos Mocha junto con Chai y Chai-HTTP para escribir y ejecutar nuestras pruebas, asegurándonos de que nuestra aplicación funcione como se espera en diferentes escenarios. Para ejecutar las pruebas, simplemente ejecute el comando `npm test` en la terminal y Mocha se encargará de ejecutar todas las pruebas definidas en el directorio de pruebas.
 
+## Página de Error 404 Personalizada Español/Inglés
+
+Este proyecto incluye una página de error 404 personalizada para mejorar la experiencia del usuario cuando intenta acceder a una ruta que no existe en el servidor.
 
 
 ## Endpoints

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="language-selector">
+    <label for="language-select">Idioma/Language:</label>
+    <select id="language-select" onchange="changeLanguage()">
+        <option value="es">Español</option>
+      <option value="en">English</option>
+     
+    </select>
+  </div>
+
+  <div class="container">
+    <h1 id="page-title">Página no encontrada</h1>
+    <p id="page-text" class="typewriter">Lo siento, la página que estás buscando no se pudo encontrar en el servidor. Por favor, ve a "/api-docs" para ver la documentación.</p>
+    <p>- Carlos Calleja Sáez -</p>
+    <a href="https://github.com/CarlosCallejaSaez/carlos-renting-api" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" width="40">
+    </a>
+  </div>
+
+  <script>
+    // Función para cambiar el idioma según la selección del usuario
+    function changeLanguage() {
+      const selectElement = document.getElementById('language-select');
+      const selectedLanguage = selectElement.value;
+
+      // Obtiene los elementos de texto que deben cambiarse
+      const pageTitleElement = document.getElementById('page-title');
+      const pageTextElement = document.getElementById('page-text');
+
+      // Cambia el texto según el idioma seleccionado
+      if (selectedLanguage === 'en') {
+        pageTitleElement.textContent = 'Page Not Found';
+        pageTextElement.textContent = 'Sorry, the page you are looking for could not be found on the server. Please go to "/api-docs" to see the documentation.';
+      } else if (selectedLanguage === 'es') {
+        pageTitleElement.textContent = 'Página no encontrada';
+        pageTextElement.textContent = 'Lo siento, la página que estás buscando no se pudo encontrar en el servidor. Por favor, ve a "/api-docs" para ver la documentación.';
+      }
+    }
+  </script>
+</body>
+</html>

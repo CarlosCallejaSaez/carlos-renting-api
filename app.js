@@ -38,10 +38,13 @@ app.use('/users', userRoutes);
 app.use('/comments', commentRoutes);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
+// Configurar Express para servir archivos estáticos desde la carpeta 'public'
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Configurar la ruta para el manejo de errores 404
 app.get("*", (req, res) => {
-    res.status(404).send("<h1>Page not found on the server -Carlos Calleja Sáez-</h1>");
-  });
-  
+  res.status(404).sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Puerto de escucha
 const PORT =  process.env.PORT ;
