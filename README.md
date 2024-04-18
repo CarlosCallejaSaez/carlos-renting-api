@@ -5,6 +5,10 @@ Bienvenido a CarlosRenting. Esta API proporciona endpoints para la gestión de u
 ## Documentación Swagger
 Accede a la documentación de la API en `/api-docs`
 
+## Cloudinary y Multer
+
+La API utiliza Cloudinary y Multer para gestionar el almacenamiento y manipulación de imágenes de manera eficiente. Cloudinary proporciona una solución robusta para almacenar imágenes en la nube, permitiendo un acceso rápido y seguro a las mismas. Multer, por otro lado, ayuda a manejar la carga de archivos en nuestra API, permitiendo a los usuarios subir imágenes directamente desde sus dispositivos.
+
 ## Uso de Morgan para el Registro de Logs
 
 En este proyecto, se usa Morgan como middleware para registrar logs de las solicitudes HTTP en un archivo de registro. Esto garantiza que los logs generados por las solicitudes HTTP sean registrados en el archivo `access.log` en la carpeta `logs` del proyecto.
@@ -107,3 +111,9 @@ ACCESS_TOKEN_SECRET=
 MONGODB=
 
 PORT= 
+
+CLOUDINARY_CLOUD_NAME=
+
+CLOUDINARY_API_KEY=
+
+CLOUDINARY_API_SECRET=

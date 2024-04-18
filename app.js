@@ -55,11 +55,13 @@ const carRoutes = require("./routes/carRoutes");
 const reservationRoutes = require("./routes/reservationRoutes");
 const userRoutes = require("./routes/userRoutes");
 const commentRoutes = require("./routes/commentRoutes");
+const staffRoutes = require("./routes/staffRoutes");
 
 app.use("/cars", carRoutes);
 app.use("/reservations", reservationRoutes);
 app.use("/users", userRoutes);
 app.use("/comments", commentRoutes);
+app.use("/staff", staffRoutes);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 // Configurar Express para servir archivos estáticos desde la carpeta 'public'
