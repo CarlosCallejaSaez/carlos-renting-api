@@ -1,4 +1,6 @@
 require("dotenv").config();
+const http = require('http');
+const { configureSocket } = require('./config/socketConfig'); 
 const express = require("express");
 const rateLimit = require('express-rate-limit');
 var cors = require("cors");
@@ -11,7 +13,15 @@ const specs = require("./config/swaggerConfig");
 const app = express();
 const connectDB = require("./config/db");
 
+
+
+
+const server = http.createServer(app);
+const io = configureSocket(server); 
 app.use(cors());
+
+
+
 
 app.use(
   helmet.contentSecurityPolicy({
@@ -56,18 +66,20 @@ const reservationRoutes = require("./routes/reservationRoutes");
 const userRoutes = require("./routes/userRoutes");
 const commentRoutes = require("./routes/commentRoutes");
 const staffRoutes = require("./routes/staffRoutes");
+const chatRouter = require('./routes/chatRouter');
 
 app.use("/cars", carRoutes);
 app.use("/reservations", reservationRoutes);
 app.use("/users", userRoutes);
 app.use("/comments", commentRoutes);
 app.use("/staff", staffRoutes);
+app.use('/chat', chatRouter);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
-// Configurar Express para servir archivos estáticos desde la carpeta 'public'
+//  Express para servir archivos estáticos desde la carpeta 'public'
 app.use(express.static(path.join(__dirname, "public")));
 
-// Configurar la ruta para el manejo de errores 404
+// Ruta para el manejo de errores 404
 app.get("*", (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "public", "index.html"));
 });

@@ -9,6 +9,10 @@ Accede a la documentación de la API en `/api-docs`
 
 La API utiliza Cloudinary y Multer para gestionar el almacenamiento y manipulación de imágenes de manera eficiente. Cloudinary proporciona una solución robusta para almacenar imágenes en la nube, permitiendo un acceso rápido y seguro a las mismas. Multer, por otro lado, ayuda a manejar la carga de archivos en nuestra API, permitiendo a los usuarios subir imágenes directamente desde sus dispositivos.
 
+## Socket.IO
+
+Uso para implementación de un chat de soporte en tiempo real.
+
 ## Uso de Morgan para el Registro de Logs
 
 En este proyecto, se usa Morgan como middleware para registrar logs de las solicitudes HTTP en un archivo de registro. Esto garantiza que los logs generados por las solicitudes HTTP sean registrados en el archivo `access.log` en la carpeta `logs` del proyecto.
@@ -69,6 +73,20 @@ Para garantizar la estabilidad y disponibilidad de la API, se ha un establecido 
 - **POST /comments**: Crea un nuevo comentario.
 - **PUT /comments/:id**: Actualiza un comentario existente.
 - **DELETE /comments/:id**: Elimina un comentario.
+
+### Equipo (Staff)
+- **GET /staff**: Obtiene todos los miembros del personal.
+- **GET /staff/:id**:  Obtiene un miembro específico del personal por ID.
+- **POST /staff**: Sube el avatar e información de un nuevo miembro del personal
+- **PUT /staff/:id**: Actualiza la información de un miembro específico del personal.
+- **DELETE /staff/:id**: Descripción: Elimina un miembro específico del personal.
+  
+### Chat
+
+- **GET /chat/messages**: Devuelve todos los mensajes de chat almacenados en la base de datos.
+- **POST /chat/messages**: Guarda un nuevo mensaje de chat en la base de datos.
+
+
 # Rutas Protegidas
 
 Las siguientes rutas requieren autenticación mediante un token JWT válido:
