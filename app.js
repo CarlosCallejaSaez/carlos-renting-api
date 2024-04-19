@@ -12,6 +12,9 @@ const swaggerUi = require("swagger-ui-express");
 const specs = require("./config/swaggerConfig");
 const app = express();
 const connectDB = require("./config/db");
+const readline = require('readline');
+
+
 
 
 
@@ -60,6 +63,41 @@ connectDB();
 
 app.use(express.json());
 
+// Métricas
+app.get('/metrics', async (req, res) => {
+  try {
+      const metrics = await processLogFile();
+      res.json(metrics);
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Error al procesar las métricas' });
+  }
+});
+
+async function processLogFile() {
+  const fileStream = fs.createReadStream(logFilePath);
+  const rl = readline.createInterface({
+      input: fileStream,
+      crlfDelay: Infinity
+  });
+
+  let metrics = {
+      totalRequests: 0,
+      statusCodes: {}
+  };
+
+  for await (const line of rl) {
+      const [_, __, ___, ____, _____, statusCode] = line.split(' ');
+
+      metrics.totalRequests++;
+      
+      metrics.statusCodes[statusCode] = (metrics.statusCodes[statusCode] || 0) + 1;
+  }
+
+ 
+  return metrics;
+}
+
 // Rutas
 const carRoutes = require("./routes/carRoutes");
 const reservationRoutes = require("./routes/reservationRoutes");
@@ -88,6 +126,13 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("*", (req, res) => {
   res.status(404).sendFile(path.join(__dirname, "public", "index.html"));
 });
+
+
+// Error handler
+const errorHandler = require('./middleware/errorHandler');
+app.use(errorHandler);
+
+
 
 // Puerto de escucha
 const PORT = process.env.PORT;

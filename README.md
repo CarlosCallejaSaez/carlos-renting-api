@@ -13,9 +13,11 @@ La API utiliza Cloudinary y Multer para gestionar el almacenamiento y manipulaci
 
 Uso para implementación de un chat de soporte en tiempo real.
 
-##
- Axios
+## Axios
 Axios es una librería HTTP basada en promesas que permite realizar solicitudes HTTP tanto desde el navegador como desde Node.js. En este proyecto, se Axios para hacer una llamada a una API externa (https://newsapi.org/) para obtener las últimas noticias de negocios.
+
+## Manejador de Errores Personalizado
+Se ha implementado un manejador de errores personalizado para garantizar una experiencia consistente y segura para nuestros usuarios. Este manejador de errores está diseñado para capturar y manejar errores de manera eficiente en toda la aplicación. Ofrece un manejo específico para diferentes tipos de errores, como errores de validación de datos, errores de autenticación y otros errores internos del servidor. Además de proporcionar mensajes de error claros y descriptivos, registra todos los errores en la consola para facilitar la depuración y el mantenimiento del sistema.
 
 ## Uso de Morgan para el Registro de Logs
 
@@ -93,23 +95,27 @@ Para garantizar la estabilidad y disponibilidad de la API, se ha un establecido 
 ### News (Noticias)
 
 - **GET /news**: Devuelve las noticias de la Api NewsApi.
+- 
+### Metrics (Métricas)
+
+- **GET /metrics**: Devuelve las noticias de las métricas de la Api (Número de peticiones y Códigos).
 
 
 # Rutas Protegidas
 
 Las siguientes rutas requieren autenticación mediante un token JWT válido:
 
-- **GET /:id**
+- **GET /users/:id**
   - Descripción: Obtiene un usuario por su ID.
-  - Protección: Requiere un token JWT válido.
+  
 
-- **PUT /:id**
+- **PUT /users/:id**
   - Descripción: Actualiza un usuario existente por su ID.
-  - Protección: Requiere un token JWT válido.
+ 
 
-- **DELETE /:id**
+- **DELETE /users/:id**
   - Descripción: Elimina un usuario por su ID.
-  - Protección: Requiere un token JWT válido.
+  
 
 ---
 
