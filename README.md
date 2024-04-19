@@ -16,8 +16,13 @@ Uso para implementación de un chat de soporte en tiempo real.
 ## Axios
 Axios es una librería HTTP basada en promesas que permite realizar solicitudes HTTP tanto desde el navegador como desde Node.js. En este proyecto, se Axios para hacer una llamada a una API externa (https://newsapi.org/) para obtener las últimas noticias de negocios.
 
+## Integración de Stripe para Pagos
+
+Esta API utiliza Stripe para procesar pagos de manera segura y eficiente. Stripe ofrece una solución completa para aceptar pagos en línea, permitiendo transacciones con tarjetas de crédito, a través de la ruta `/payment`, que acepta solicitudes POST con el precio y el token de pago proporcionados en el cuerpo de la solicitud.
+
+
 ## Manejador de Errores Personalizado
-Se ha implementado un manejador de errores personalizado para garantizar una experiencia consistente y segura para nuestros usuarios. Este manejador de errores está diseñado para capturar y manejar errores de manera eficiente en toda la aplicación. Ofrece un manejo específico para diferentes tipos de errores, como errores de validación de datos, errores de autenticación y otros errores internos del servidor. Además de proporcionar mensajes de error claros y descriptivos, registra todos los errores en la consola para facilitar la depuración y el mantenimiento del sistema.
+Se ha implementado un manejador de errores personalizado para garantizar una experiencia consistente y segura para nuestros usuarios. Este manejador de errores está diseñado para capturar y manejar errores de manera eficiente en toda la aplicación. Ofrece un manejo específico para diferentes tipos de errores, como errores de validación de datos, errores de autenticación y otros errores internos del servidor.
 
 ## Uso de Morgan para el Registro de Logs
 
@@ -98,7 +103,7 @@ Para garantizar la estabilidad y disponibilidad de la API, se ha un establecido 
 - 
 ### Metrics (Métricas)
 
-- **GET /metrics**: Devuelve las noticias de las métricas de la Api (Número de peticiones y Códigos).
+- **GET /metrics**: Devuelve las métricas de la Api.
 
 
 # Rutas Protegidas
@@ -151,3 +156,5 @@ CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
 
 API_NEWS=
+
+STRIPE_SECRET_KEY=

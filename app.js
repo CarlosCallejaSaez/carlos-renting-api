@@ -3,7 +3,7 @@ const http = require('http');
 const { configureSocket } = require('./config/socketConfig'); 
 const express = require("express");
 const rateLimit = require('express-rate-limit');
-var cors = require("cors");
+const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const fs = require("fs");
@@ -106,6 +106,7 @@ const commentRoutes = require("./routes/commentRoutes");
 const staffRoutes = require("./routes/staffRoutes");
 const chatRouter = require('./routes/chatRouter');
 const newsRouter = require('./routes/newsRouter');
+const paymentRoutes = require('./routes/paymentRoutes');
 
 app.use("/cars", carRoutes);
 app.use("/reservations", reservationRoutes);
@@ -114,6 +115,7 @@ app.use("/comments", commentRoutes);
 app.use("/staff", staffRoutes);
 app.use('/news', newsRouter);
 app.use('/chat', chatRouter);
+app.use('/payment',paymentRoutes);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 //  Express para servir archivos estáticos desde la carpeta 'public'
