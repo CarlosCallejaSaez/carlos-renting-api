@@ -13,6 +13,10 @@ La API utiliza Cloudinary y Multer para gestionar el almacenamiento y manipulaci
 
 Uso para implementación de un chat de soporte en tiempo real.
 
+##
+ Axios
+Axios es una librería HTTP basada en promesas que permite realizar solicitudes HTTP tanto desde el navegador como desde Node.js. En este proyecto, se Axios para hacer una llamada a una API externa (https://newsapi.org/) para obtener las últimas noticias de negocios.
+
 ## Uso de Morgan para el Registro de Logs
 
 En este proyecto, se usa Morgan como middleware para registrar logs de las solicitudes HTTP en un archivo de registro. Esto garantiza que los logs generados por las solicitudes HTTP sean registrados en el archivo `access.log` en la carpeta `logs` del proyecto.
@@ -86,6 +90,10 @@ Para garantizar la estabilidad y disponibilidad de la API, se ha un establecido 
 - **GET /chat/messages**: Devuelve todos los mensajes de chat almacenados en la base de datos.
 - **POST /chat/messages**: Guarda un nuevo mensaje de chat en la base de datos.
 
+### News (Noticias)
+
+- **GET /news**: Devuelve las noticias de la Api NewsApi.
+
 
 # Rutas Protegidas
 
@@ -135,3 +143,5 @@ CLOUDINARY_CLOUD_NAME=
 CLOUDINARY_API_KEY=
 
 CLOUDINARY_API_SECRET=
+
+API_NEWS=

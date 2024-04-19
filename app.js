@@ -67,17 +67,22 @@ const userRoutes = require("./routes/userRoutes");
 const commentRoutes = require("./routes/commentRoutes");
 const staffRoutes = require("./routes/staffRoutes");
 const chatRouter = require('./routes/chatRouter');
+const newsRouter = require('./routes/newsRouter');
 
 app.use("/cars", carRoutes);
 app.use("/reservations", reservationRoutes);
 app.use("/users", userRoutes);
 app.use("/comments", commentRoutes);
 app.use("/staff", staffRoutes);
+app.use('/news', newsRouter);
 app.use('/chat', chatRouter);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 //  Express para servir archivos estáticos desde la carpeta 'public'
 app.use(express.static(path.join(__dirname, "public")));
+
+
+
 
 // Ruta para el manejo de errores 404
 app.get("*", (req, res) => {

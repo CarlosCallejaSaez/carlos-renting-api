@@ -47,7 +47,13 @@ describe('Pruebas de API', () => {
     });
 
 
+    describe('GET /news', () => {
+      it('Get News debería devolver estado 200', async () => {
+        const res = await chai.request(app).get('/news');
     
+        expect(res).to.have.status(200);
+      });
+    });
 
 
   
