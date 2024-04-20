@@ -11,7 +11,7 @@ background: linear-gradient(90deg, rgba(226,225,206,0.5550595238095238) 7%, rgba
   .container {
     text-align: center;
     margin-top: 100px;
-  }
+    }
   
   h1 {
     color: #4e0505;
@@ -20,6 +20,7 @@ background: linear-gradient(90deg, rgba(226,225,206,0.5550595238095238) 7%, rgba
   .p {
     color: #000000;
     margin-bottom: 20px;
+   
   }
 
   .language-selector{
@@ -48,3 +49,4 @@ background: linear-gradient(90deg, rgba(226,225,206,0.5550595238095238) 7%, rgba
     from, to { border-color: transparent }
     50% { border-color: rgb(5, 5, 5); }
   }
+ 

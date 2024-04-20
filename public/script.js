@@ -9,11 +9,11 @@ function changeLanguage() {
     // Cambia el texto según el idioma seleccionado
     if (selectedLanguage === 'en') {
       pageTitleElement.textContent = 'Page Not Found';
-      pageTextElement.textContent = 'Sorry, the page you are looking for could not be found on the server. Please go to "/api-docs" to see the documentation.';
+      pageTextElement.textContent = 'Please go to "/api-docs" ';
       console.log("en")
     } else if (selectedLanguage === 'es') {
       pageTitleElement.textContent = 'Página no encontrada';
-      pageTextElement.textContent = 'Lo siento, la página que estás buscando no se pudo encontrar en el servidor. Por favor, ve a "/api-docs" para ver la documentación.';
+      pageTextElement.textContent = 'Por favor, ve a "/api-docs" ';
     }
   }
   module.exports=changeLanguage

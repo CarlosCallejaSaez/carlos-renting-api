@@ -52,7 +52,9 @@ Agrega varias medidas de seguridad automáticas. Helmet configura encabezados HT
 
 Para garantizar la estabilidad y disponibilidad de la API, se ha un establecido un límite de peticiones utilizando el middleware `express-rate-limit` en Node.js. Este límite está configurado para permitir un máximo de 100 peticiones por hora por cliente. Esta medida permite controlar el tráfico entrante y prevenir sobrecargas en el servidor.
 
+## Ngrok
 
+Ngrok es una herramienta que permite crear túneles seguros hacia servidores locales, lo que facilita el acceso a estos servidores desde Internet. Para exponer el puerto 5000, `ngrok http 5000`
 
 ## Endpoints
 
