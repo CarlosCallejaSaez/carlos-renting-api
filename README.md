@@ -2,6 +2,14 @@
 
 Bienvenido a CarlosRenting. Esta API proporciona endpoints para la gestión de una flota de coches de renting.
 
+https://hub.docker.com/repository/docker/carloscallejasez/carlosrentingapi/general
+
+
+https://carlos-renting-api-1.onrender.com
+
+## Integración Continua con GitHub Actions y Docker
+Este proyecto utiliza GitHub Actions para la integración continua (CI) y la entrega continua (CD) mediante Docker. Cada vez que se realiza un push a la rama principal del repositorio, GitHub Actions automatiza el proceso de construcción de la imagen Docker para la aplicación, así como su despliegue si es necesario. El archivo de flujo de trabajo .github/workflows/docker.yml contiene la configuración necesaria para esta automatización. Las credenciales de Docker Hub se almacenan de forma segura como secretos en el repositorio de GitHub, lo que garantiza un despliegue seguro y sin problemas de la aplicación en entornos de producción.
+
 ## Documentación Swagger
 Accede a la documentación de la API en `/api-docs`
 
