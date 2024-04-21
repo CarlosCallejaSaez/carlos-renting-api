@@ -114,6 +114,10 @@ Ngrok es una herramienta que permite crear túneles seguros hacia servidores loc
 ### Metrics (Métricas)
 
 - **GET /metrics**: Devuelve las métricas de la Api.
+  
+### Data (Datos)
+- **POST /data**: Guarda datos en el data lake.
+- **GET /data**: Devuelve los datos calculados del data lake
 
 
 # Rutas Protegidas
