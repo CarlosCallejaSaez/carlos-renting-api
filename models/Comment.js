@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { validateCommentLength } = require('../middleware/commentMiddleware');
 
 const commentSchema = new mongoose.Schema({
   reservation: {
@@ -20,5 +21,8 @@ const commentSchema = new mongoose.Schema({
     default: Date.now
   }
 });
+
+// Middleware para validar la longitud del campo text antes de guardar
+commentSchema.pre('save', validateCommentLength);
 
 module.exports = mongoose.model('Comment', commentSchema);

@@ -35,6 +35,10 @@ Este proyecto utiliza una capa de caché para mejorar el rendimiento al acceder 
 ## Manejador de Errores Personalizado
 Se ha implementado un manejador de errores personalizado para garantizar una experiencia consistente y segura para nuestros usuarios. Este manejador de errores está diseñado para capturar y manejar errores de manera eficiente en toda la aplicación. Ofrece un manejo específico para diferentes tipos de errores, como errores de validación de datos, errores de autenticación y otros errores internos del servidor.
 
+## Middleware de Validación de Longitud de Comentario
+
+Este middleware verificará si el campo de texto (text) tiene al menos 20 caracteres antes de permitir que el comentario se guarde en la base de datos.
+
 ## Uso de Morgan para el Registro de Logs
 
 En este proyecto, se usa Morgan como middleware para registrar logs de las solicitudes HTTP en un archivo de registro. Esto garantiza que los logs generados por las solicitudes HTTP sean registrados en el archivo `access.log` en la carpeta `logs` del proyecto.
