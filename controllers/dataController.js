@@ -1,6 +1,7 @@
 const SensorData = require('../models/SensorData');
 const { calculateStatistics } = require('../utils/statistics');
 const NodeCache = require('node-cache');
+const Chart = require('chart.js/auto')
 
 // Crear una nueva instancia de caché con un tiempo de vida de 10 segundos
 const cache = new NodeCache({ stdTTL: 10 });
@@ -51,7 +52,23 @@ async function getAllData(req, res) {
       // Guardar los datos en la caché
       cache.set('sensorData', { data: groupedData, stats: statsBySensor });
 
-      res.json({ data: groupedData, stats: statsBySensor });
+        // Crear gráficos de barras para las estadísticas de cada sensor
+        const charts = {};
+        for (const sensor in statsBySensor) {
+          const canvas = `<canvas id="${sensor}-chart" width="400" height="200"></canvas>`;
+          const chartData = {
+            labels: Object.keys(statsBySensor[sensor]),
+            datasets: [{
+              label: 'Estadísticas',
+              data: Object.values(statsBySensor[sensor]),
+              backgroundColor: 'rgba(54, 162, 235, 0.5)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1
+            }]
+          };
+          charts[sensor] = { canvas, data: chartData };
+        }
+      res.json({ data: groupedData, stats: statsBySensor, charts });
     }
   } catch (err) {
     res.status(500).json({ error: 'Error al obtener los datos del data lake.' });
