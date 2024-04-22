@@ -28,7 +28,7 @@ Axios es una librería HTTP basada en promesas que permite realizar solicitudes 
 
 Esta API utiliza Stripe para procesar pagos de manera segura y eficiente. Stripe ofrece una solución completa para aceptar pagos en línea, permitiendo transacciones con tarjetas de crédito, a través de la ruta `/payment`, que acepta solicitudes POST con el precio y el token de pago proporcionados en el cuerpo de la solicitud.
 
-# Uso de caché 
+## Uso de caché 
 
 Este proyecto utiliza una capa de caché para mejorar el rendimiento al acceder a los datos del sensor. La caché se implementa utilizando la biblioteca `node-cache`.
 
@@ -145,7 +145,7 @@ Las siguientes rutas requieren autenticación mediante un token JWT válido:
 
 Para obtener un token JWT válido y acceder a las rutas protegidas, primero debes iniciar sesión utilizando la siguiente ruta:
 
-- **POST /login**
+- **POST /users/login**
   - Descripción: Inicia sesión con nombre de usuario y contraseña.
   - Parámetros de entrada: `username` (nombre de usuario) y `password` (contraseña).
   - Respuesta exitosa: Devuelve un token JWT válido que se debe incluir en las solicitudes a las rutas protegidas en el encabezado de autorización.

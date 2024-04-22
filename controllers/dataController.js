@@ -30,13 +30,28 @@ async function getAllData(req, res) {
     } else {
       // Si no están en la caché, obtenerlos de la base de datos
       const data = await SensorData.find();
-      const values = data.map(entry => entry.value);
-      const stats = calculateStatistics(values);
+      
+      // Agrupar los datos por tipo de sensor
+      const groupedData = {};
+      data.forEach(entry => {
+        if (!groupedData[entry.sensor]) {
+          groupedData[entry.sensor] = [];
+        }
+        groupedData[entry.sensor].push(entry.value);
+      });
+
+      // Calcular estadísticas para cada tipo de sensor
+      const statsBySensor = {};
+      for (const sensor in groupedData) {
+        const values = groupedData[sensor];
+        const stats = calculateStatistics(values);
+        statsBySensor[sensor] = stats;
+      }
       
       // Guardar los datos en la caché
-      cache.set('sensorData', { data, stats });
+      cache.set('sensorData', { data: groupedData, stats: statsBySensor });
 
-      res.json({ data, stats });
+      res.json({ data: groupedData, stats: statsBySensor });
     }
   } catch (err) {
     res.status(500).json({ error: 'Error al obtener los datos del data lake.' });
