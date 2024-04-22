@@ -28,6 +28,9 @@ Axios es una librería HTTP basada en promesas que permite realizar solicitudes 
 
 Esta API utiliza Stripe para procesar pagos de manera segura y eficiente. Stripe ofrece una solución completa para aceptar pagos en línea, permitiendo transacciones con tarjetas de crédito, a través de la ruta `/payment`, que acepta solicitudes POST con el precio y el token de pago proporcionados en el cuerpo de la solicitud.
 
+# Uso de caché 
+
+Este proyecto utiliza una capa de caché para mejorar el rendimiento al acceder a los datos del sensor. La caché se implementa utilizando la biblioteca `node-cache`.
 
 ## Manejador de Errores Personalizado
 Se ha implementado un manejador de errores personalizado para garantizar una experiencia consistente y segura para nuestros usuarios. Este manejador de errores está diseñado para capturar y manejar errores de manera eficiente en toda la aplicación. Ofrece un manejo específico para diferentes tipos de errores, como errores de validación de datos, errores de autenticación y otros errores internos del servidor.
