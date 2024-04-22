@@ -37,10 +37,10 @@ app.use(
   })
 );
 
-// Límite de tasa ( 100 peticiones por hora)
+// Límite de tasa ( 1000 peticiones por hora)
 const limiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hora en milisegundos
-  max: 100, // límite de 100 peticiones por hora
+  max: 1000, // límite de 1000 peticiones por hora
   message: 'Has excedido el límite de peticiones. Por favor, inténtalo de nuevo más tarde.'
 });
 

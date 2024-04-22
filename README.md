@@ -59,6 +59,14 @@ Para garantizar la estabilidad y disponibilidad de la API, se ha un establecido 
 
 Ngrok es una herramienta que permite crear túneles seguros hacia servidores locales, lo que facilita el acceso a estos servidores desde Internet. Para exponer el puerto 5000, `ngrok http 5000`
 
+## Detector de Velocidad de Coche y Enviador de Datos API
+
+Este script en Python simula un sistema embebido que detecta la velocidad de un coche y envía los datos a la API  con el cuerpo de la llamada especificado como `{"sensor": "value"}`.
+
+```
+ python speed.py
+  ```
+
 ## Endpoints
 
 ### Coches (Cars)
