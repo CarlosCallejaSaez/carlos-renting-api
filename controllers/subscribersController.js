@@ -38,7 +38,7 @@ exports.createSubscribers = async (req, res, next) => {
                         margin: 0 auto;
                     }
                     header {
-                        background-color: #f5f5f5;
+                        background-color: #b2e2f2;
                         padding: 20px;
                         text-align: center;
                     }
@@ -46,7 +46,7 @@ exports.createSubscribers = async (req, res, next) => {
                         padding: 20px;
                     }
                     footer {
-                        background-color: #f5f5f5;
+                        background-color: #d8f8e1;
                         padding: 20px;
                         text-align: center;
                     }
