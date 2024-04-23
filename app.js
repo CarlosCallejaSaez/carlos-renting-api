@@ -108,6 +108,7 @@ const chatRouter = require('./routes/chatRouter');
 const newsRouter = require('./routes/newsRouter');
 const paymentRoutes = require('./routes/paymentRoutes');
 const dataRoutes = require('./routes/dataRoutes');
+const subscriberRoutes=require('./routes/subscribersRoutes');
 
 app.use("/cars", carRoutes);
 app.use("/reservations", reservationRoutes);
@@ -118,6 +119,8 @@ app.use('/news', newsRouter);
 app.use('/chat', chatRouter);
 app.use('/payment',paymentRoutes);
 app.use('/data', dataRoutes);
+app.use('/subscribe', subscriberRoutes);
+
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 //  Express para servir archivos estáticos desde la carpeta 'public'

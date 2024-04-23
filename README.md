@@ -39,6 +39,13 @@ Se ha implementado un manejador de errores personalizado para garantizar una exp
 
 Este middleware verificará si el campo de texto (text) tiene al menos 20 caracteres antes de permitir que el comentario se guarde en la base de datos.
 
+
+
+
+## Módulo de Suscripción con Nodemailer
+
+Este módulo de suscripción te permite capturar correos electrónicos de usuarios interesados y enviarles boletines informativos utilizando Nodemailer. Es útil para mantener a tus usuarios actualizados sobre las novedades, promociones o cualquier otro contenido relevante.
+
 ## Uso de Morgan para el Registro de Logs
 
 En este proyecto, se usa Morgan como middleware para registrar logs de las solicitudes HTTP en un archivo de registro. Esto garantiza que los logs generados por las solicitudes HTTP sean registrados en el archivo `access.log` en la carpeta `logs` del proyecto.
@@ -134,6 +141,9 @@ Este script en Python simula un sistema embebido que detecta la velocidad de un 
 - **POST /data**: Guarda datos en el data lake.
 - **GET /data**: Devuelve los datos calculados del data lake
 
+### Subscribe
+- **POST /subscribe**: Guarda el email del usuario interesado en la newsletter y envía un email de bienvenida.
+
 
 # Rutas Protegidas
 
@@ -187,3 +197,7 @@ CLOUDINARY_API_SECRET=
 API_NEWS=
 
 STRIPE_SECRET_KEY=
+
+EMAIL_USER=
+
+EMAIL_PASSWORD=
